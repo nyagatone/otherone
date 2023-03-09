@@ -95,12 +95,16 @@ meter {
   text-align: center;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100%;
   min-height: 100%;
   color: #0f131c;
   letter-spacing: .1ex;
-  background: #fff;
+  background-color: #fefefe;
   font-family: Inter, Helvetica Neue, Arial, Hiragino Kaku Gothic ProN, Hiragino Sans, BIZ UDPGothic, Meiryo, sans-serif;
   font-size: 16px;
 }
@@ -111,6 +115,7 @@ img {
 }
 
 .container {
+  z-index: 1;
   position: relative;
   top: 0;
 }
@@ -170,6 +175,7 @@ img {
   border-left: 1px solid #0f131c;
   border-right: 1px solid #0f131c;
   margin: 0 40px;
+  position: relative;
 }
 
 @media screen and (max-width: 767px) {
@@ -209,24 +215,74 @@ img {
   width: 100%;
 }
 
+.header-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .header-toggle {
+    width: 67px;
+    height: 7px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 16px;
+  }
+
+  .header-toggle > span {
+    height: 1px;
+    background: #0f131c;
+    transition: transform .3s;
+    display: block;
+  }
+}
+
 .header-navi {
   background: #fff;
   justify-content: flex-start;
   display: flex;
+  position: relative;
 }
 
 @media screen and (max-width: 767px) {
   .header-navi {
+    visibility: hidden;
     z-index: 3;
-    width: 92%;
+    width: 100%;
     height: 100lvh;
     flex-direction: column;
     margin: auto;
-    display: none;
     position: fixed;
     top: 70px;
     left: 0;
     right: 0;
+  }
+
+  .header-navi:before {
+    content: "";
+    width: 1px;
+    height: 100vh;
+    background-color: #0f131c;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 20px;
+  }
+
+  .header-navi:after {
+    content: "";
+    width: 1px;
+    height: 100vh;
+    background-color: #0f131c;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 20px;
   }
 }
 
@@ -238,10 +294,56 @@ img {
   display: grid;
 }
 
+@media screen and (max-width: 767px) {
+  .header-sns {
+    width: 89%;
+    border-top: 1px solid #0f131c;
+    border-bottom: 1px solid #0f131c;
+    border-left: none;
+    margin: 40px auto;
+    padding: 24px 20px;
+  }
+}
+
 .header-sns a {
   width: 28px;
   height: 28px;
   display: block;
+}
+
+.header-sns a:hover {
+  opacity: .7;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    filter: blur(.8px);
+    transform: scale(.9);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur();
+    transform: scale(1);
+  }
+}
+
+#nav-input {
+  display: none;
+}
+
+#nav-input:checked ~ .header-navi {
+  visibility: visible;
+  animation: .3s alternate fadeIn;
+}
+
+#nav-input:checked + .header-toggle span:first-child {
+  transform: translateY(3px)rotate(14deg);
+}
+
+#nav-input:checked + .header-toggle span:last-child {
+  transform: translateY(-3px)rotate(-14deg);
 }
 
 .navi {
@@ -259,10 +361,32 @@ img {
 
 .navi-item {
   text-align: center;
+  position: relative;
 }
 
 .navi-item a {
+  opacity: 1;
   display: block;
+}
+
+.navi-item a:before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #0f131c;
+  transition: transform .3s;
+  display: block;
+  position: absolute;
+  bottom: -16px;
+  transform: scale(0);
+}
+
+.navi-item a:hover {
+  opacity: .7;
+}
+
+.navi-item a:hover:before {
+  transform: scale(1);
 }
 
 .navi-item_en {
@@ -306,6 +430,8 @@ img {
 .section-titles {
   width: -moz-fit-content;
   width: fit-content;
+  opacity: 0;
+  transition: opacity .5s .8s;
 }
 
 .section-titles_head {
@@ -333,6 +459,10 @@ img {
   .section-titles_sub {
     font-size: 16px;
   }
+}
+
+.section-titles.active {
+  opacity: 1;
 }
 
 .section-text {
@@ -383,6 +513,29 @@ img {
     padding: 0 0 8px 20px;
     font-size: 14px;
   }
+}
+
+.section-thumbs {
+  position: relative;
+  top: 0;
+  overflow: hidden;
+}
+
+.section-thumbs:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transition: left .8s, width 1s .5s;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.section-thumbs.active:before {
+  width: 0%;
+  left: 100%;
 }
 
 .business {
@@ -521,6 +674,7 @@ img {
 }
 
 .footer {
+  background: #fff;
   border-top: 1px solid #0f131c;
   border-bottom: 1px solid #0f131c;
 }

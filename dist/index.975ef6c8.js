@@ -558,25 +558,28 @@ function hmrAccept(bundle, id) {
 
 },{}],"8lqZg":[function(require,module,exports) {
 var _styleScss = require("./style.scss");
-function windowResized() {
-    resizeCanvas(windowWidth, windowHeight, WEBGL); //3Dの場合は引数にWEBGLを忘れずに！
-    background(30); //再描画後に背景を再描画する
-}
-function setup() {
-    canvas = createCanvas(windowWidth, windowHeight, WEBGL); //2Dの場合は引数にWEBGLは要らない
-    canvas.position(0, 0); //canvasをページの原点に固定
-    canvas.style("z-index", "0"); //canvasを後ろに移動する
-    background(30);
-}
-function draw() {
-    background(255);
-    for(var y = 0; y <= 1000; y = y + 1000)for(var x = 0; x <= 1000; x = x + 1000){
-        noFill();
-        stroke(160, 160, 206, 70);
-        rotateX(frameCount * 0.01);
-        rotateY(frameCount * 0.01);
-        box(300, 300, 300);
-    }
+// 着火点となる要素
+const trigger = document.querySelectorAll(".trigger");
+const options = {
+    root: null,
+    rootMargin: "-50% 0px",
+    threshold: 0
+};
+// 実行するよ
+const observer = new IntersectionObserver(showElements);
+// 各 .heading に到達したら発動。複数あるから forEach 使うよ。
+trigger.forEach((trigger)=>{
+    observer.observe(trigger);
+});
+// 要素が表示されたら実行する動作
+function showElements(entries) {
+    entries.forEach((entry)=>{
+        if (entry.isIntersecting) {
+            // 各 .heading に .active を加える
+            entry.target.classList.add("active");
+            console.log("test");
+        }
+    });
 }
 
 },{"./style.scss":"81Z0h"}],"81Z0h":[function() {},{}]},["jC2qd","8lqZg"], "8lqZg", "parcelRequire1844")
