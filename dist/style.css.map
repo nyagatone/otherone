@@ -1,0 +1,1 @@
+{"mappings":"AAEA","sources":["src/style.scss"],"sourcesContent":["$test: rgba(255,255,240, 1);\n\nbody{\n    background: $test;\n}"],"names":[],"version":3,"file":"style.css.map","sourceRoot":"/__parcel_source_root/"}
