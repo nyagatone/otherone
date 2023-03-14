@@ -9,16 +9,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/index.b2d9cf43.css"><script src="/index.975ef6c8.js" defer=""></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/index.b2d9cf43.css"><script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="/index.975ef6c8.js" defer=""></script>
     <meta name="robots" content="noindex">
 </head>
 <body>
+    <div class="loading">
+        <div class="loading-logo">
+        <!--?xml version="1.0" encoding="UTF-8"?--><svg id="_レイヤー_2" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 944 187.12"><defs><style>.cls-1 {
+  fill: #0f131c;
+  stroke: #0f131c;
+  stroke-miterlimit: 10;
+}
+
+</style></defs><g id="_レイヤー_1-2"><g><g><path class="cls-1 svg-elem-1" d="m99.92,54.56c-21.42,0-38.85,17.42-38.85,38.82s17.43,38.82,38.85,38.82,38.85-17.42,38.85-38.82-17.43-38.82-38.85-38.82Zm0,65.09c-14.49,0-26.28-11.78-26.28-26.27s11.79-26.27,26.28-26.27,26.28,11.78,26.28,26.27-11.79,26.27-26.28,26.27Z"></path><path class="cls-1 svg-elem-2" d="m639.89,54.56c-21.42,0-38.85,17.42-38.85,38.82s17.43,38.82,38.85,38.82,38.85-17.42,38.85-38.82-17.43-38.82-38.85-38.82Zm26.28,38.82c0,14.48-11.79,26.27-26.28,26.27s-26.28-11.78-26.28-26.27,11.79-26.27,26.28-26.27,26.28,11.78,26.28,26.27Z"></path><polygon class="cls-1 svg-elem-3" points="174.38 66.21 199.52 66.21 199.52 132.21 212.76 132.21 212.76 66.21 236.65 66.21 236.65 54.56 174.38 54.56 174.38 66.21"></polygon><polygon class="cls-1 svg-elem-4" points="331.77 87.73 295.98 87.73 295.98 54.5 282.74 54.5 282.74 132.21 295.98 132.21 295.98 99.46 331.77 99.46 331.77 132.21 345.01 132.21 345.01 54.5 331.77 54.5 331.77 87.73"></polygon><polygon class="cls-1 svg-elem-5" points="767.96 132.21 781.2 132.21 781.2 54.56 767.96 54.56 767.96 108.33 731.45 54.69 718.99 54.69 718.99 132.21 732.24 132.21 732.24 78.55 767.96 132.21"></polygon><path class="cls-1 svg-elem-6" d="m554.36,93.64c4.17-3.93,6.28-9.89,6.28-17.73,0-7.28-1.7-11.59-6.28-15.91-4.32-4.07-8.14-5.44-15.12-5.44h-40.62v77.65h12.91v-33.12h23.3l12.47,33.12h14.22l-13.45-34.41c2.18-.83,4.14-2.13,6.28-4.15Zm-5.39-18.16c0,4.25-1.06,7.41-3.15,9.4-2,1.9-3.6,2.75-7.77,2.75h-26.5v-21.51h26.19c4.25,0,5.85,0,8.45,2.26,2.11,2.01,2.78,2.86,2.78,7.11Z"></path><polygon class="cls-1 svg-elem-7" points="390.22 91.71 390.21 91.71 390.21 94.06 390.21 96.5 390.22 96.5 390.33 132.21 452.42 132.21 452.42 120.63 403.21 120.63 403.21 99.12 441.19 99.12 441.19 87.61 403.21 87.61 403.21 66.1 452.42 66.1 452.42 54.53 390.33 54.53 390.22 91.71"></polygon><polygon class="cls-1 svg-elem-8" points="886.8 66.1 886.8 54.53 824.71 54.53 824.6 91.71 824.58 91.71 824.59 94.06 824.59 96.5 824.6 96.5 824.71 132.21 886.8 132.21 886.8 120.63 837.59 120.63 837.59 99.12 875.57 99.12 875.57 87.61 837.59 87.61 837.59 66.1 886.8 66.1"></polygon></g><path class="cls-1 svg-elem-9" d="m.5.5v186.12h943V.5H.5Zm12.28,173.72V12.9h918.44v161.33H12.78Z"></path></g></g></svg>
+        </div>
+    </div>
     <div class="container">
         <div class="side-border">
             <span class="side-border_left"></span>
             <span class="side-border_right"></span>
         </div>
-        <div class="header">
+        <div id="header" class="header">
             <header>
                 <div class="header-inner">
                     <div class="header-column">
@@ -30,7 +43,7 @@
                             <span></span>
                             <span></span>
                         </label>
-                        <div class="header-navi">
+                        <div id="header-navi" class="header-navi close">
                             <nav>
                                 <ul class="navi">
                                     <li class="navi-item">
@@ -73,34 +86,51 @@
                 <div class="main-visual_logo">
                     <img src="/main-visual_logo.e0e03be7.svg">
                 </div>
-                <div class="main-visual_photo">
-                    <picture>
-                        <source srcset="/main-visual.d65e532d.webp" media="(min-width: 1024px)" type="image/webp">
-                        <img src="/main-visual-sp.1b888b44.webp" alt="”OTHERONE”">
-                    </picture>
+                <div class="main-visual_photo swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <picture>
+                                <source srcset="/main-visual.d65e532d.webp" media="(min-width: 1024px)" type="image/webp">
+                                <img src="/main-visual-sp.1b888b44.webp" alt="”OTHERONE”">
+                            </picture>
+                        </li>
+                        <li class="swiper-slide">
+                            <picture>
+                                <source srcset="/main-visual_02.04406379.webp" media="(min-width: 1024px)" type="image/webp">
+                                <img src="/main-visual_sp02.b80b7939.webp" alt="”OTHERONE”">
+                            </picture>
+                        </li>
+                        <li class="swiper-slide">
+                            <picture>
+                                <source srcset="/main-visual_03.3ae1603b.webp" media="(min-width: 1024px)" type="image/webp">
+                                <img src="/main-visual_sp03.22705081.webp" alt="”OTHERONE”">
+                            </picture>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div id="business" class="business">
                 <section>
                     <div class="business-thumbs section-thumbs trigger">
-                        <img src="/business-thumb.c3833265.webp" alt="事業内容">
+                        <img src="/business-thumb.c3833265.webp" alt="事業概要">
                         <div class="business-titles section-titles trigger">
                             <h2 class="section-titles_head">Business Details</h2>
-                            <h3 class="section-titles_sub">事業内容</h3>
+                            <h3 class="section-titles_sub">事業概要</h3>
                         </div>
                     </div>
                     <div class="business-details">
-                        <p class="section-text">2008年から埼玉県入間郡三芳町にて創業いたしました。<br>
+                        <p class="section-text">2008年より、埼玉県入間郡三芳町にて木工所を営んでおります。<br>
                         主な業務として、</p>
                         <ul class="section-list">
-                            <li>木材加工</li>
-                            <li>TV、CM、PV、映画等の大道具製作施工</li>
-                            <li>ショーウィンドウ、店舗什器の製作施工</li>
-                            <li>展示会、各種イベントの製作施工</li>
-                            <li>舞台美術用品レンタル</li>
+                            <li class="section-list_item">木材加工</li>
+                            <li class="section-list_item">TV、CM、PV、映画等の大道具製作施工</li>
+                            <li class="section-list_item">ショーウィンドウ、店舗什器の製作施工</li>
+                            <li class="section-list_item">展示会、各種イベントの製作施工</li>
+                            <li class="section-list_item"><a href="http://www.otherone.co.jp/pdf/rental_service.pdf" target="_blank">舞台美術用品レンタル</a></li>
                         </ul>
                         <p class="section-text">などを行っております。<br>
-                            お仕事のご依頼はCONTACTよりお気軽にお問い合わせください。</p>
+                        同業他社様の第2工場として急な発注等にも対応しておりますので、<br class="sp-clear">
+                        お仕事のご依頼、ご相談等CONTACTよりお気軽にお問い合わせください。</p>
                     </div>
                 </section>
             </div>
@@ -117,12 +147,12 @@
                         <div class="mechannical-column_details">
                             <dl class="section-detail">
                                 <dt class="section-detail_title">常設機械設備</dt>
-                                <dd class="section-detail_text">パネルソー/ SHINX ✕2</dd>
-                                <dd class="section-detail_text">鋸軸傾斜横切り盤 / OTANI TEKKOOTANI TEKKO</dd>
+                                <dd class="section-detail_text">パネルソー/ SHINX SZ-III ２台</dd>
+                                <dd class="section-detail_text">鋸軸傾斜横切り盤 / OTANI TEKKO</dd>
                                 <dd class="section-detail_text">鋸軸傾斜昇降盤 / EIWA</dd>
                                 <dd class="section-detail_text">自動カンナ盤 / SUZUSAN</dd>
                                 <dd class="section-detail_text">超仕上げカンナ盤 / MARUNAKA</dd>
-                                <dd class="section-detail_text">卓上スライド丸鋸 / HITACHI ✕3</dd>
+                                <dd class="section-detail_text">卓上スライド丸鋸 / HITACHI 3台</dd>
                             </dl>
                         </div>
                     </div>
@@ -139,10 +169,12 @@
                                 </div>
                             </div>
                             <div class="recruit-details">
-                                <p class="section-text">木材加工、製造に興味のある方<br>
+                                <p class="section-text">弊社では常時スタッフを募集しております。<br>
+                                    木材加工、製造に興味のある方<br>
                                     vector / cad / sketchup等を扱える方</p>
                                 <p class="section-text">未経験でも問題ありません、興味のある方は<br class="sp-clear">
-                                インスタのDMまでメッセージをお願いします。</p>
+                                CONTACT又はInstagramのDMから<br class="sp-clear">
+                                お気軽にお問い合わせください。</p>
                                 <a class="btn-external" href="https://www.instagram.com/otherone_inc/" target="_blank">@otherone_inc</a>
                             </div>
                     </div>

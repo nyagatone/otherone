@@ -558,6 +558,12 @@ function hmrAccept(bundle, id) {
 
 },{}],"b9BDZ":[function(require,module,exports) {
 var _styleScss = require("./style.scss");
+const loading = document.querySelector(".loading");
+window.addEventListener("load", ()=>{
+    setTimeout(()=>{
+        loading.classList.add("hide");
+    }, 2500);
+}, false);
 // 着火点となる要素
 const trigger = document.querySelectorAll(".trigger");
 const options = {
@@ -567,20 +573,49 @@ const options = {
 };
 // 実行するよ
 const observer = new IntersectionObserver(showElements);
-// 各 .heading に到達したら発動。複数あるから forEach 使うよ。
+// 複数あるから forEach 使う
 trigger.forEach((trigger)=>{
     observer.observe(trigger);
 });
 // 要素が表示されたら実行する動作
 function showElements(entries) {
     entries.forEach((entry)=>{
-        if (entry.isIntersecting) {
-            // 各 .heading に .active を加える
-            entry.target.classList.add("active");
-            console.log("test");
-        }
+        if (entry.isIntersecting) entry.target.classList.add("active");
     });
 }
+const mySwiper = new Swiper(".swiper", {
+    // Optional parameters
+    loop: true,
+    effect: "fade",
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+    }
+});
+document.addEventListener("DOMContentLoaded", ()=>{
+    const header = document.querySelector("header");
+    const headerHeight = header.clientHeight;
+    let main = document.querySelector(".main-visual");
+    main.style.paddingTop = headerHeight + "px";
+});
+let checkbox = document.getElementById("nav-input");
+let label = document.getElementById("menubtn");
+let navBlock = document.querySelector(".header-navi");
+label.addEventListener("click", ()=>{
+    if (checkbox.checked) navBlock.classList.replace("open", "close");
+    else navBlock.classList.replace("close", "open");
+});
+const navId = document.getElementById("header-navi");
+const hashtag = navId.querySelectorAll('a[href^="#"]');
+// hashtag.addEventListener('click', () => {
+//   checkbox.checked = false;
+// });
+hashtag.forEach((hashtag)=>{
+    hashtag.addEventListener("click", ()=>{
+        checkbox.checked = false;
+        navBlock.classList.replace("open", "close");
+    });
+});
 
 },{"./style.scss":"h2R8m"}],"h2R8m":[function() {},{}]},["fB7M9","b9BDZ"], "b9BDZ", "parcelRequire1844")
 
