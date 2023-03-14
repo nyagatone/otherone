@@ -855,6 +855,15 @@ img {
   margin: 0 0 8px;
 }
 
+.section-list_item a {
+  color: #0a1e47;
+  text-decoration: underline;
+}
+
+.section-list_item a:hover {
+  color: #bbc0c9;
+}
+
 .section-detail_title {
   margin: 0 0 24px;
   font-size: 24px;
@@ -1179,7 +1188,7 @@ img {
 
 .footer-copy small {
   margin: 0 24px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 @media screen and (max-width: 767px) {
@@ -1217,5 +1226,11 @@ img {
   color: #0f131c;
   text-shadow: none;
   margin: 0 0 32px;
+}
+
+@media screen and (max-width: 767px) {
+  #defaultCanvas0 {
+    display: none;
+  }
 }
 
