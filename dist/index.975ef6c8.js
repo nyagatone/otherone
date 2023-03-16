@@ -588,6 +588,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
         // Optional parameters
         loop: true,
         effect: "fade",
+        fadeEffect: {
+            crossFade: true
+        },
+        speed: 2000,
         autoplay: {
             delay: 10000,
             disableOnInteraction: false
