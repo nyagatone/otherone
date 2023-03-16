@@ -583,38 +583,45 @@ function showElements(entries) {
         if (entry.isIntersecting) entry.target.classList.add("active");
     });
 }
-const mySwiper = new Swiper(".swiper", {
-    // Optional parameters
-    loop: true,
-    effect: "fade",
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false
-    }
-});
 document.addEventListener("DOMContentLoaded", ()=>{
-    const header = document.querySelector("header");
-    const headerHeight = header.clientHeight;
-    let main = document.querySelector(".main-visual");
-    main.style.paddingTop = headerHeight + "px";
-});
-let checkbox = document.getElementById("nav-input");
-let label = document.getElementById("menubtn");
-let navBlock = document.querySelector(".header-navi");
-label.addEventListener("click", ()=>{
-    if (checkbox.checked) navBlock.classList.replace("open", "close");
-    else navBlock.classList.replace("close", "open");
-});
-const navId = document.getElementById("header-navi");
-const hashtag = navId.querySelectorAll('a[href^="#"]');
-// hashtag.addEventListener('click', () => {
-//   checkbox.checked = false;
-// });
-hashtag.forEach((hashtag)=>{
-    hashtag.addEventListener("click", ()=>{
-        checkbox.checked = false;
-        navBlock.classList.replace("open", "close");
+    const mySwiper = new Swiper(".swiper", {
+        // Optional parameters
+        loop: true,
+        effect: "fade",
+        autoplay: {
+            delay: 10000,
+            disableOnInteraction: false
+        }
     });
+    //checkbox toggle処理ß
+    let checkbox = document.getElementById("nav-input");
+    let label = document.getElementById("menubtn");
+    let navBlock = document.querySelector(".header-navi");
+    label.addEventListener("click", ()=>{
+        if (checkbox.checked) navBlock.classList.replace("open", "close");
+        else navBlock.classList.replace("close", "open");
+    });
+    //SPナビ制御
+    const navId = document.getElementById("header-navi");
+    const hashtag = navId.querySelectorAll('a[href^="#"]');
+    hashtag.forEach((hashtag)=>{
+        hashtag.addEventListener("click", ()=>{
+            checkbox.checked = false;
+            navBlock.classList.replace("open", "close");
+        });
+    });
+    //headerの色反転用
+    const scFunc = function() {
+        const spot = document.getElementsByClassName("business");
+        const header = document.getElementById("header");
+        const position = Math.floor(window.innerHeight * .75);
+        for(let i = 0; i < spot.length; i++){
+            let offsetTop = Math.floor(spot[i].getBoundingClientRect().top);
+            if (offsetTop < position) header.classList.replace("filter-on", "filter-off");
+            if (offsetTop > position) header.classList.replace("filter-off", "filter-on");
+        }
+    };
+    window.addEventListener("scroll", scFunc, false);
 });
 
 },{"./style.scss":"81Z0h"}],"81Z0h":[function() {},{}]},["jC2qd","8lqZg"], "8lqZg", "parcelRequire1844")

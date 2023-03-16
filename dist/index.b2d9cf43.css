@@ -413,6 +413,32 @@ meter {
   right: 16px;
 }
 
+@keyframes zoomOut {
+  0% {
+    transform: scale(1.4);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.swiper-slide {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  transform-origin: center;
+  transform: scale(1);
+}
+
+.swiper-slide-active img {
+  animation: 16.3s linear forwards zoomOut;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -514,11 +540,28 @@ img {
   z-index: 1;
   width: 100%;
   height: auto;
-  background: #fff;
+  background: none;
   border-top: 1px solid #0f131c;
   border-bottom: 1px solid #0f131c;
+  transition: filter .3s, background .3s;
   position: fixed;
   top: 0;
+}
+
+.header.filter-on {
+  filter: invert();
+  background: #fff3;
+}
+
+@media screen and (max-width: 767px) {
+  .header.filter-on .header-navi {
+    background-color: #ffffffb3;
+  }
+}
+
+.header.filter-off {
+  filter: invert(0);
+  background: #fff;
 }
 
 .header-inner {
@@ -593,7 +636,6 @@ img {
 }
 
 .header-navi {
-  background: #fff;
   justify-content: flex-start;
   display: flex;
   position: relative;
@@ -605,6 +647,7 @@ img {
     z-index: 3;
     width: 100%;
     height: 100lvh;
+    background: #fff;
     flex-direction: column;
     margin: auto;
     position: fixed;
@@ -687,7 +730,7 @@ img {
 
 .navi {
   gap: 40px;
-  padding: 30px 20px;
+  padding: 24px;
   display: flex;
 }
 
