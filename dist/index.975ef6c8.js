@@ -562,6 +562,7 @@ const loading = document.querySelector(".loading");
 window.addEventListener("load", ()=>{
     setTimeout(()=>{
         loading.classList.add("hide");
+        mySwiper.autoplay.start();
     }, 2500);
 }, false);
 // 着火点となる要素
@@ -583,21 +584,21 @@ function showElements(entries) {
         if (entry.isIntersecting) entry.target.classList.add("active");
     });
 }
+const mySwiper = new Swiper(".swiper", {
+    // Optional parameters
+    loop: true,
+    effect: "fade",
+    fadeEffect: {
+        crossFade: true
+    },
+    speed: 2000,
+    autoplay: {
+        delay: 6000,
+        disableOnInteraction: false
+    }
+});
 document.addEventListener("DOMContentLoaded", ()=>{
-    const mySwiper = new Swiper(".swiper", {
-        // Optional parameters
-        loop: true,
-        effect: "fade",
-        fadeEffect: {
-            crossFade: true
-        },
-        speed: 2000,
-        autoplay: {
-            delay: 10000,
-            disableOnInteraction: false
-        }
-    });
-    //checkbox toggle処理ß
+    //checkbox toggle処理
     let checkbox = document.getElementById("nav-input");
     let label = document.getElementById("menubtn");
     let navBlock = document.querySelector(".header-navi");
