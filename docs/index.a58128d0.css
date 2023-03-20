@@ -436,7 +436,7 @@ meter {
 }
 
 .swiper-slide-active img {
-  animation: 15s linear forwards zoomOut;
+  animation: 7s linear forwards zoomOut;
 }
 
 html {
