@@ -432,8 +432,11 @@ meter {
 
 .swiper-slide img {
   transform-origin: center;
-  animation: 15s linear infinite forwards zoomOut;
   transform: scale(1);
+}
+
+.swiper-slide-active img {
+  animation: 8s linear infinite forwards zoomOut;
 }
 
 html {
