@@ -9,6 +9,6 @@ const data = {
 };
 const jsonld = document.createElement("script");
 jsonld.type = "application/ld+json";
-jsonld.text = JSON.stringify(myData);
+jsonld.text = JSON.stringify(data);
 document.querySelector("head").appendChild(jsonld);
 
